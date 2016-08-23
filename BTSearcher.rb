@@ -115,7 +115,6 @@ class BTSearcher
   
   def get *args # get information from result
     if args.size < 2
-      p args.size
       puts "Error"
       return
     end
@@ -177,7 +176,7 @@ class BTSearcher
   end
 
   def search title
-    title = title.encode "utf-8"
+    title = title.encode @config["encoding"]
     if title != @title
       @title = title
       @page = @config["default_page"]
